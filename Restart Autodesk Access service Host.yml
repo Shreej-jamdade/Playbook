@@ -1,0 +1,14 @@
+name : Restart Autodesk Access Service Host
+host : LAPTOP-FORTTV65
+become : True
+tasks : 
+-name : Stopped Autodesk Access Service Host
+service : 
+name : "C:\Program Files\Autodesk\AdODIS\V1\Setup\AdskAccessServiceHost.exe"
+state : stopped
+ignore_error : true
+-name : Started Autodesk Access Service Host
+service :
+name : "C:\Program Files\Autodesk\AdODIS\V1\Setup\AdskAccessServiceHost.exe"
+state : start
+enabled : yes
